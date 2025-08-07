@@ -170,11 +170,11 @@ body {
 }
 
 .tour-list_container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .tour {
-  width: 33.33%;
   background-color: #fff;
   border-radius: 10px;
   position: relative;
@@ -263,12 +263,12 @@ body {
 }
 
 .thingsToDo-list_container {
-  display: flex;
+  display: grid;
   gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .thingsToDo {
-  width: 25%;
   background-color: #fff;
   border-radius: 10px;
   position: relative;
@@ -348,7 +348,7 @@ body {
 
 .hiddengems-list-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
 
