@@ -1,0 +1,39 @@
+# 1. Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+pnpm-lock.yaml
+
+# 2. Sass / CSS build
+*.css
+*.css.map
+
+# 3. VSCode Settings
+.vscode/
+
+# 4. Build output
+dist/
+build/
+
+# 5. Environment files
+.env
+.env.local
+
+# 6. System files
+.DS_Store
+Thumbs.db
+
+# 7. Logs
+logs/
+*.log
+
+# 8. Pug cache
+pug-cache/
+
+# 9. Coverage tools
+coverage/
+
+# 10. Git itself
+.git/
