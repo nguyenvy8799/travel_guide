@@ -1,0 +1,825 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fefefe;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+/* BODY */
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+/* ----------------------------------- */
+
+/* HEADER */
+
+.header_wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 1px 0 0 rgba(15, 15, 15, 0.06);
+}
+
+.header_button_wrapper {
+  display: flex;
+  gap: 30px;
+  padding: 20px 0px;
+}
+
+.header_button {
+  text-decoration: none;
+  width: 124px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  color: rgba(119, 126, 144, 1);
+  background-color: rgba(244, 245, 249, 1);
+}
+
+.header_button.active {
+  background-color: rgba(59, 113, 254, 1);
+  color: rgba(244, 245, 246, 1);
+}
+/* ----------------------------------- */
+
+/* THINGS TO DO PAGE */
+
+/* ----------------------------------- */
+
+.thingsToDo_wrapper {
+  width: 100%;
+}
+
+.thingstodo_container {
+  padding: 80px 135px;
+}
+
+.thingstodo_content {
+  display: grid;
+  grid-template-columns: 1fr 2.8fr;
+  gap: 80px;
+}
+
+/* --------------SIDE BAR ---------------- */
+
+.filter {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter_top_searchbar {
+  margin-bottom: 30px;
+}
+
+.searchbar_title {
+  font-weight: 500;
+  font-size: 18px;
+  color: #353945;
+  margin-bottom: 12px;
+}
+
+.searchbar_input {
+  position: relative;
+}
+
+.searchbar_textfield {
+  width: 290px;
+  height: 40px;
+  padding: 8px 8px 8px 39px;
+  border: 1px solid #e6e8ec;
+  border-radius: 10px;
+}
+
+.filter_top_checkbox {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.icon_searchbar_input {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+}
+
+.activity_type_title {
+  color: #353945;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.activity-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.check {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  position: relative;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: #fff;
+  border: 1.5px solid #d0d5dd;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+  outline: none;
+  transition: border-color 0.15s, background-color 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:hover {
+  border-color: #c3c8d4;
+}
+input[type="checkbox"]:checked {
+  background: #3b71fe;
+  border-color: #3b71fe;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 11px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg);
+}
+
+/* --------------Main---------------- */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.card {
+  padding-right: 34px;
+  display: flex;
+  border-radius: 19px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px #e6e8ec inset;
+}
+
+.card_thingstodo_image {
+  width: 420px;
+  height: 335px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.card_thingstodo_image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(15, 15, 15, 0.41),
+    rgba(16, 16, 16, 0)
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.card_content {
+  padding: 29px 0 29px 27px;
+  height: 335px;
+}
+
+.card_thingstodo_header {
+  margin-bottom: 61px;
+}
+
+.card_header_content {
+  margin-bottom: 22px;
+}
+
+.card_thingstodo_title {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #000000;
+  margin-bottom: 13px;
+}
+
+.card_thingstodo_subTitle {
+  display: flex;
+  gap: 4px;
+}
+
+.card_thingstodo_review {
+  display: flex;
+  align-items: center;
+}
+
+.card_review-star {
+  margin-right: 4px;
+}
+
+.card_review-count {
+  font-weight: 500;
+  font-size: 14px;
+  color: #3b3e44;
+  line-height: 1.4;
+}
+
+.card_location {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #84878b;
+}
+
+.card_header_text_desc {
+  font-weight: 400;
+  color: #777e90;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.card_thingstodo_button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.thingstodo_button {
+  background-color: #3b71fe;
+  color: #ffffff;
+  padding: 10px 34px;
+  border-radius: 20px;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 500;
+  border: none;
+}
+
+.thingstodo_price {
+  padding: 10px 20px;
+  background-color: #f4f5f9;
+  color: #353945;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  border-radius: 8px;
+}
+
+.thingstodo_button.delete {
+  color: #ff6370;
+  background-color: #ffe0e2;
+}
+
+/* ----------------------------------- */
+
+/* TRAVEL GUIDE */
+
+/* ----------------------------------- */
+
+/* CARD - TRAVEL GUIDE */
+.card_container {
+  padding: 0px 111px 60px;
+  border-bottom: 1px solid rgba(196, 196, 196, 1);
+  margin-bottom: 70px;
+  margin-top: 70px;
+}
+
+.card_wrapper_container {
+  display: flex;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 30px 56px 30px 28px;
+  border-radius: 30px;
+  gap: 30px;
+  box-shadow: 0px 40px 200px 0px rgba(36, 36, 36, 0.06);
+}
+
+.card_image {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 386px;
+  height: 302px;
+}
+
+.card_image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.48), rgba(29, 29, 29, 0));
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 20px;
+}
+
+.card_img {
+  object-fit: cover;
+  z-index: 0;
+  position: relative;
+  display: block;
+}
+
+.card_title {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card_title_Header {
+  font-size: 24px;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 1);
+  font-weight: 500;
+}
+
+.card_title_subHeader {
+  font-size: 14px;
+  color: rgba(119, 126, 144, 1);
+}
+
+.card_review {
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+}
+
+.card_review_star {
+  margin-right: 4px;
+}
+
+.card_spanTitle {
+  color: rgba(119, 126, 144, 1);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.card_subTitle {
+  margin-top: 16px;
+}
+
+.card_subTitle_heading_title {
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: rgba(35, 38, 47, 1);
+  margin-bottom: 9px;
+}
+
+.card_subTitle_heading_content {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgba(119, 126, 144, 1);
+  margin-bottom: 18px;
+}
+
+.card_content_subTitle {
+  font-size: 14px;
+  color: rgba(119, 126, 144, 1);
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+/* ----------------------------------- */
+
+/* TOUR - TRAVEL GUIDE */
+.tour_wrapper {
+  margin-bottom: 70px;
+}
+
+.tour_title_header {
+  font-size: 30px;
+  line-height: 1.5;
+  font-weight: 600;
+  color: rgba(20, 20, 22, 1);
+}
+
+.tour-list_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.tour {
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 40px 200px 0px rgba(36, 36, 36, 0.06);
+}
+
+.tour:not(:first-child) {
+  margin-left: 30px;
+}
+
+.tour_header {
+  position: relative;
+}
+
+.tour_img {
+  width: 100%;
+  height: 239px;
+  object-fit: cover;
+}
+
+.tour_price {
+  position: absolute;
+  top: 24px;
+  left: 30px;
+  padding: 5px 16px;
+  border-radius: 4px;
+  color: rgba(252, 252, 253, 1);
+  background-color: rgba(53, 57, 69, 1);
+  font-size: 12px;
+  line-height: 1.6;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.tour_content {
+  padding: 20px 20px 14px;
+}
+
+.tour_title {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.tour_rating {
+  margin-bottom: 20px;
+}
+
+.tour_rating,
+.tour_review {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  align-items: center;
+}
+
+.tour_review_star {
+  margin-right: 4px;
+}
+
+.tour_review_count {
+  font-weight: 500;
+}
+
+.tour_button {
+  background-color: #3b71fe;
+  color: #f4f5f6;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 8px 17px;
+}
+
+/* ----------------------------------- */
+
+/* THINGS TO DO - TRAVEL GUIDE */
+.thingsToDo_travel_wrapper {
+  margin-bottom: 70px;
+}
+
+.thingsToDo_title_header {
+  font-size: 30px;
+  color: rgba(53, 57, 69, 1);
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.thingsToDo-list_container {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.thingsToDo {
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 40px 200px 0px rgba(36, 36, 36, 0.06);
+}
+
+.thingsToDo_header {
+  position: relative;
+}
+
+.thingsToDo_img {
+  width: 100%;
+  height: 185px;
+  object-fit: cover;
+  display: block;
+}
+
+.thingsToDo_recommend {
+  padding: 4px 18px 5px;
+  background-color: rgba(59, 113, 254, 1);
+  color: rgba(244, 245, 246, 1);
+  border-radius: 30px;
+  position: absolute;
+  top: 172px;
+  right: 20px;
+}
+
+.thingstodo_travel_content {
+  padding: 14px 97px 11px 20px;
+}
+
+.thingstodo_travel_content_title-timeline {
+  color: rgba(119, 126, 144, 1);
+  font-size: 11px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.thingstodo_travel_content_title-place {
+  color: rgba(53, 57, 69, 1);
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 500;
+  margin-bottom: 9px;
+}
+
+.thingstodo_travel_content_rating-review {
+  display: flex;
+  font-size: 12px;
+  line-height: 1.5;
+  gap: 4px;
+  align-items: center;
+}
+
+.thingstodo_travel_content_rating_review_count {
+  color: rgba(79, 79, 79, 1);
+  font-weight: 500;
+}
+/* ----------------------------------- */
+
+/* HIDDEN GEMS IN BANGKOK - TRAVEL GUIDE */
+.hiddengems_wrapper {
+  background-color: #fcfcfc;
+}
+
+.hiddengems-container {
+  padding: 65px 86px;
+}
+
+.hiddengems-title-header {
+  font-size: 30px;
+  line-height: 1.5;
+  font-weight: 600;
+  color: rgba(53, 57, 69, 1);
+  display: flex;
+  justify-content: center;
+}
+
+.hiddengems-list-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.hiddengems {
+  position: relative;
+  padding: 12px;
+  border-radius: 14px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 40px 200px 0px rgba(36, 36, 36, 0.06);
+}
+
+.hiddengems-img {
+  border-radius: 13px;
+  object-fit: cover;
+  z-index: 0;
+  position: relative;
+  display: block;
+}
+
+.hiddengems::before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.48), rgba(29, 29, 29, 0));
+  z-index: 1;
+  pointer-events: none;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  border-radius: 13px;
+}
+
+.hiddengems-list-content {
+  position: absolute;
+  left: 42px;
+  bottom: 26px;
+  z-index: 2;
+}
+
+.hiddengems-content-header {
+  font-size: 24px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.hiddengems-content-timeline {
+  color: #e6e8ec;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* ----------------------------------- */
+
+/* TOURS PAGE */
+
+/* ----------------------------------- */
+
+/* ----------------------------------- */
+
+/* MAIN BUTTON */
+.button_wrapper {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 70px 0;
+}
+
+.button {
+  font-size: 24px;
+  line-height: 1.5;
+  font-weight: 500;
+  border: none;
+  border-radius: 30px;
+  background-color: #3b71fe;
+  padding: 9px 40px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* ----------------------------------- */
+
+/* FOOTER */
+.footer_wrapper {
+  background-color: #ffffff;
+  padding: 68px 0;
+}
+
+.footer_content_nav {
+  display: flex;
+  justify-content: space-between;
+}
+/* ----------------------------------- */
+
+/* FOOTER AIRTRAV */
+.footer_content_airtrav {
+  width: 268px;
+}
+
+.airtrav_header {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.airtrav_img {
+  padding: 8px 10px;
+  background-color: #3b71fe;
+  border-radius: 12px;
+}
+
+.airtrav_header_title {
+  font-size: 20px;
+  line-height: 2;
+  font-weight: 800;
+  color: rgba(53, 57, 69, 1);
+}
+
+.airtrav_content_text {
+  font-weight: 400;
+  line-height: 1.5;
+  color: #353945;
+  margin-bottom: 30px;
+}
+
+.airtrav_textfield {
+  position: relative;
+}
+
+.airtrav_input {
+  padding: 8px 26px;
+  border-radius: 24px;
+  border: 2px solid #e6e8ec;
+  position: relative;
+  font-size: 16px;
+  height: 49px;
+  width: 253px;
+}
+
+.airtrav_input::placeholder {
+  color: #b1b5c3;
+}
+
+.img_button {
+  padding: 10px;
+  background-color: #3b71fe;
+  border-radius: 30px;
+  width: 33px;
+  height: 33px;
+  position: absolute;
+  z-index: 1;
+  top: 8px;
+  right: 23px;
+  bottom: 8px;
+  cursor: pointer;
+}
+
+/* ----------------------------------- */
+
+/* FOOTER LIST ITEMS */
+.services_header_title,
+.support_header_title,
+.business_header_title {
+  font-size: 24px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #353945;
+  margin-bottom: 20px;
+}
+
+.services_list,
+.support_list,
+.business_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #777e90;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.support_list li:not(:last-child),
+.services_list li:not(:last-child),
+.business_list li:not(:last-child) {
+  margin-bottom: 14px;
+}
+
+/* ----------------------------------- */
+
+/* FOOTER DIVIDER */
+.footer_content_divider {
+  margin-top: 71px;
+  border-bottom: 1px solid #e6e8ec;
+  margin-bottom: 40px;
+}
+
+/* ----------------------------------- */
+
+/* FOOTER BOTTOM */
+.footer_content_bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #b1b5c3;
+  line-height: 1.4;
+  align-items: center;
+}
+
+.footer_bottom_social {
+  display: flex;
+  gap: 14px;
+}
+
+.img_social {
+  cursor: pointer;
+}
