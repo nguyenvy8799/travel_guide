@@ -4,7 +4,7 @@ let links = document.querySelectorAll(".header_button");
 let routes = {
   "things-to-do": "pages/things-to-do.html",
   "travel-guide": "pages/travel-guide.html",
-  tours: "pages/tours.html",
+  "tours": "pages/tours.html",
 };
 
 let cache = new Map();
