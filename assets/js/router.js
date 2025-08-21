@@ -4,7 +4,7 @@ let links = document.querySelectorAll(".header_button");
 let routes = {
   "things-to-do": "pages/things-to-do.html",
   "travel-guide": "pages/travel-guide.html",
-  tours: "pages/tour.html",
+  tours: "pages/tours.html",
 };
 
 let cache = new Map();
@@ -39,6 +39,18 @@ async function loadPage(page) {
   try {
     let html = await fetchPage(routes[page]);
     app.innerHTML = html;
+    let exploreButton = document.querySelector(".button");
+    let buttonWrapper = document.querySelector(".button_wrapper");
+    if (page === "tours") {
+      return (
+        (exploreButton.textContent = "See All Tours"),
+        (buttonWrapper.style.padding = "30px 0")
+      );
+    }
+    return (
+      (exploreButton.textContent = "Explore All"),
+      (buttonWrapper.style.padding = "70px 0")
+    );
   } catch (err) {
     console.error("Error loading page:", err);
     app.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:80vh;color:#84878b">
