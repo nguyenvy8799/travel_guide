@@ -665,6 +665,10 @@ input[type="checkbox"]:checked::after {
 
 /* ----------------------------------- */
 
+.card_tours-container {
+  padding: 30px 0 20px;
+}
+
 /* ----------------------------------- */
 
 /* MAIN BUTTON */
@@ -672,7 +676,6 @@ input[type="checkbox"]:checked::after {
   background-color: #ffffff;
   display: flex;
   justify-content: center;
-  padding: 70px 0;
 }
 
 .button {
